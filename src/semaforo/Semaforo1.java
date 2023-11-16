@@ -6,6 +6,7 @@
 package semaforo;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -61,39 +62,37 @@ public class Semaforo1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblSemaforo)
+                .addGap(253, 253, 253))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(lblSemaforo)
-                            .addGap(340, 340, 340))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(lblImagen3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(635, 635, 635)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblImagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbnCambiar)
-                        .addGap(174, 174, 174))))
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblImagen3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblImagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 380, Short.MAX_VALUE)
+                .addComponent(lbnCambiar)
+                .addGap(174, 174, 174))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(38, 38, 38)
                 .addComponent(lblSemaforo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
                 .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101)
+                .addGap(117, 117, 117)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblImagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbnCambiar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                .addComponent(lblImagen3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbnCambiar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                        .addComponent(lblImagen3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblImagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
@@ -102,25 +101,36 @@ public class Semaforo1 extends javax.swing.JFrame {
     private void lbnCambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lbnCambiarActionPerformed
         // TODO add your handling code here:
 lblSemaforo.setText(String.valueOf(Cambiar));
-
+//new Semaforo1().setVisible(false);
+//lblSemaforo.setVisible(true);
 if (Cambiar == 1) {
     ImageIcon rojo= new ImageIcon
         ("C:\\Users\\pablo\\OneDrive\\Documentos\\NetBeansProjects\\Holamundovisual\\src\\resources\\ROJO.jpg");
-   lblSemaforo.setIcon(rojo);
+    lblImagen1.setVisible(true);
+    lblImagen2.setVisible(false);
+    lblImagen3.setVisible(false);
+    //lblSemaforo.setIcon(rojo);
     Cambiar=2;   
     
 } else if(Cambiar== 2) {
     ImageIcon amarillo = new ImageIcon
         ("C:\\Users\\pablo\\OneDrive\\Documentos\\NetBeansProjects\\Holamundovisual\\src\\resources\\AMARILLO.jpg");
-    lblSemaforo.setIcon(amarillo);
+    lblImagen1.setVisible(false);
+    lblImagen2.setVisible(true);
+    lblImagen3.setVisible(false);
+    //lblSemaforo.setIcon(amarillo);
     Cambiar=3;
 } else if (Cambiar== 3) {
     ImageIcon verde= new ImageIcon
         ("C:\\Users\\pablo\\OneDrive\\Documentos\\NetBeansProjects\\Holamundovisual\\src\\resources\\VERDE.jpg");
-    lblSemaforo.setIcon(verde);
+    lblImagen1.setVisible(false);
+    lblImagen2.setVisible(false);
+    lblImagen3.setVisible(true);
+    //lblSemaforo.setIcon(verde);
+    
     Cambiar=1;
 } else {
-    System.out.println("INCORRECTO");
+    JOptionPane.showMessageDialog(this,"INCORRECTO");
 }
 
 lblSemaforo.setText("");
